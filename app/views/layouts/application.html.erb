@@ -11,6 +11,17 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to 'Inicia sesión', new_user_session_path %>
+        </li>
+        <li>
+          <%= link_to 'Registrate', new_user_registration_path %>
+        </li>
+      </ul>
+    </nav>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
