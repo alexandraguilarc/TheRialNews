@@ -19,6 +19,11 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    if current_user.id == @post.user.id
+      render :edit
+    else
+      redirect_to root_path
+    end
   end
 
   # POST /articles or /articles.json
