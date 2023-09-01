@@ -74,3 +74,5 @@ end
 # gems add for me
 
 gem 'devise'
+gem 'faker'
+gem 'annotate'
