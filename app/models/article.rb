@@ -11,4 +11,11 @@
 #
 class Article < ApplicationRecord
   belongs_to :user
+
+  #Validations
+
+  validates :title,        presence: true
+  validates :description,  presence: true
+  validates :user_id,      presence: true
+
 end

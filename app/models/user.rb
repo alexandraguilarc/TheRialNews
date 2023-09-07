@@ -20,5 +20,20 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :articles
+  #Validaciones
+  validates :name,  allow_blank: true,
+                    length: { minimum: 3, maximum: 25 }
+  validates :phone, allow_blank: true,
+                    length: { minimum: 10, maximum: 15 }
+  validates :age,    allow_blank: true,
+                    length: { maximum: 2 }
+
+  #Associations
+  has_many :articles, dependent: :destroy
+
+  #Método condicional que indica que si nombre está vacío usa email
+  def full_name
+    name.blank?? email: name
+  end
+
 end
