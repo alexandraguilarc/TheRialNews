@@ -76,3 +76,6 @@ end
 gem 'devise'
 gem 'faker'
 gem 'annotate'
+gem 'figaro'
+gem 'ransack'
+gem 'devise-i18n'
