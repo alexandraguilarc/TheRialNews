@@ -72,12 +72,12 @@ Rails.application.configure do
   config.action_mailer.default_options = {from: 'therialnew@mail.com'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => ENV['user_name'],
-    :password => ENV['password'],
-    :address => 'sandbox.smtp.mailtrap.io',
-    :host => 'sandbox.smtp.mailtrap.io',
-    :port => '2525',
-    :authentication => :cram_md5
+    user_name: ENV['user_name'],
+    password: ENV['password'],
+    address: 'sandbox.smtp.mailtrap.io',
+    host: 'sandbox.smtp.mailtrap.io',
+    port: '2525',
+    authentication: :cram_md5
   }
 
 end
