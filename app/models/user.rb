@@ -36,4 +36,6 @@ class User < ApplicationRecord
     name.blank?? email: name
   end
 
+  enum :role, [:normal_user, :author, :admin]
+
 end

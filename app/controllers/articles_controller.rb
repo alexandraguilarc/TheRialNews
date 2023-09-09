@@ -2,6 +2,14 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: %i[index show]
 
+  before_action only: [:new, :create] do
+    authorize_request(["author", "admin"])
+  end
+
+  before_action only: [:edit, :update, :destroy] do
+    authorize_request(["admin"])
+  end
+
   # GET /articles or /articles.json
   def index
     @articles = Article.all

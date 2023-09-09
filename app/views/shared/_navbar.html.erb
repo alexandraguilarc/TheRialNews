@@ -12,7 +12,8 @@
         <% if user_signed_in? %>
             <li class="nav-item">
                 <p>
-                    <%= current_user.full_name  %>
+                    <%= current_user.full_name  %> |
+                    <strong><%= current_user.role %></strong>
                 </p>
             </li>
             <li class="nav-item">
