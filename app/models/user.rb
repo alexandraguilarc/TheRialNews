@@ -30,6 +30,8 @@ class User < ApplicationRecord
 
   #Associations
   has_many :articles, dependent: :destroy
+  has_many :comments
+  
 
   #Método condicional que indica que si nombre está vacío usa email
   def full_name
